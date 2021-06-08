@@ -1,0 +1,30 @@
+<ng-container *ngIf="isLoading">
+   <mat-spinner></mat-spinner>
+   <p>Loading Forecast..</p>
+</ng-container>
+<div class="card-holder" *ngIf="isReady && !isLoading">
+   <h4>24-Hour Forecast For: <strong>{{cityName}}</strong></h4>
+   <div style="display: inline-block;" *ngFor="let item of forecastDataList">
+      <mat-card class="card-container">
+         <mat-card-header class="header">
+            <mat-card-title class="title"> {{item.dt_txt | date: 'shortTime'}}</mat-card-title>
+            <mat-card-subtitle class="temperature"> {{item.main.temp | number: '1.0-0'}}&#8451;</mat-card-subtitle>
+         </mat-card-header>
+         <mat-card-content>
+            <div class="row">
+               <div class="col">
+                  <img mat-card-image [src]="getIconUrl(item.weather[0].icon)" />
+                  <p class="description">{{item.weather[0].main}}</p>
+               </div>
+               <div class="col">
+                  <img mat-card-image src="../../../assets/windy_icon_128px.png" />
+                  <p class="wind">{{item.wind.speed * 3.6 | number: '1.0-0'}} km/h</p>
+               </div>
+            </div>
+         </mat-card-content>
+      </mat-card>
+   </div>
+</div>
+<ng-container *ngIf="!isReady && !isLoading">
+   No cities chosen yet ..
+</ng-container>
