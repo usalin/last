@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { take } from 'rxjs/internal/operators/take';
 import { WeatherDataObject } from '../models/city.model';
 import { WeatherService } from '../services/weather.service';
 
@@ -16,6 +15,5 @@ export class CityListComponent implements OnInit {
 
   ngOnInit() {
    this.responseList$ = this.weatherService.requestDataFromMultipleSources();
-    
   }
 }

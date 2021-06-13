@@ -22,7 +22,6 @@ export interface Coord {
    lon: number;
    lat: number;
 }
-
 export interface Weather {
    id: number;
    main: string;
@@ -37,16 +36,13 @@ export interface Main {
    pressure: number;
    humidity: number;
 }
-
 export interface Wind {
    speed: number;
    deg: number;
 }
-
 export interface Clouds {
    all: number;
 }
-
 export interface Sys {
    type: number;
    id: number;
@@ -54,7 +50,6 @@ export interface Sys {
    sunrise: number;
    sunset: number;
 }
-
 export interface WeatherDataObject {
    coord: Coord;
    weather: Weather[];

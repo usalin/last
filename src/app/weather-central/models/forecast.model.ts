@@ -9,18 +9,15 @@ export interface Main {
    humidity: number;
    temp_kf: number;
 }
-
 export interface Weather {
    id: number;
    main: string;
    description: string;
    icon: string;
 }
-
 export interface Clouds {
    all: number;
 }
-
 export interface Wind {
    speed: number;
    deg: number;
@@ -30,11 +27,9 @@ export interface Wind {
 export interface Sys {
    pod: string;
 }
-
 export interface Rain {
    threeHour: number;
 }
-
 export interface List {
    dt: number;
    main: Main;
@@ -47,12 +42,10 @@ export interface List {
    dt_txt: string;
    rain: Rain;
 }
-
 export interface Coord {
    lat: number;
    lon: number;
 }
-
 export interface City {
    id: number;
    name: string;
@@ -63,7 +56,6 @@ export interface City {
    sunrise: number;
    sunset: number;
 }
-
 export interface ForecastDataObject {
    cod: string;
    message: number;

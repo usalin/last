@@ -18,17 +18,16 @@ export class CityDetailComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private weatherService: WeatherService) { }
   ngOnInit() {
-     this.activatedRoute.paramMap.pipe(
+    this.activatedRoute.paramMap.pipe(
       tap(() => this.isLoading = true),
       switchMap((params: ParamMap) => {
         this.cityName = params.get('name');
         return this.weatherService.getCityWeatherForecastDataByName(params.get('name'));
       }),
     ).subscribe(data => {
-      console.log(data);
       this.forecastDataList = data;
-        this.isReady = true;
-        this.isLoading = false;      
+      this.isReady = true;
+      this.isLoading = false;
     });
   }
   public getIconUrl(iconCode: string) {

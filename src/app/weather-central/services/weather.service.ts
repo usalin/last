@@ -22,7 +22,7 @@ export class WeatherService {
       );
   }
   requestDataFromMultipleSources(): Observable<any[]> {
-    const cities = Cities.map((city)=> this.getAverageWeatherByCityName(city.name));
+    const cities = Cities.map((city) => this.getAverageWeatherByCityName(city.name));
     return forkJoin(cities);
   }
   private getAverageWeatherByCityName(cityName: string) {
