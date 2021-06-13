@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 import { ForecastDataObject } from '../models/forecast.model';
+import { Cities } from '../models/city.model';
 
 @Injectable()
 export class WeatherService {
@@ -21,12 +22,11 @@ export class WeatherService {
       );
   }
   requestDataFromMultipleSources(): Observable<any[]> {
-    let response1 = this.http.get(environment.apiBaseUrl + `weather?q=Izmir&appid=${environment.openWeatherApiKey}&units=metric`);
-    let response2 = this.http.get(environment.apiBaseUrl + `weather?q=Stockholm&appid=${environment.openWeatherApiKey}&units=metric`);
-    let response3 = this.http.get(environment.apiBaseUrl + `weather?q=Amsterdam&appid=${environment.openWeatherApiKey}&units=metric`);
-    let response4 = this.http.get(environment.apiBaseUrl + `weather?q=Prague&appid=${environment.openWeatherApiKey}&units=metric`);
-    let response5 = this.http.get(environment.apiBaseUrl + `weather?q=Milan&appid=${environment.openWeatherApiKey}&units=metric`);
-
-    return forkJoin([response1, response2, response3, response4, response5]);
+    const cities = Cities.map((city)=> this.getAverageWeatherByCityName(city.name));
+    return forkJoin(cities);
   }
+  private getAverageWeatherByCityName(cityName: string) {
+    return this.http.get(environment.apiBaseUrl + `weather?q=${cityName}&appid=${environment.openWeatherApiKey}&units=metric`)
+  }
+
 }

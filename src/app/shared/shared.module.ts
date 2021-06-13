@@ -8,8 +8,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [],
-  imports: [],
   exports: [
     CommonModule,
     ReactiveFormsModule,

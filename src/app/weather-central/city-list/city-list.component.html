@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3 list-container">
-      <li *ngFor="let item of responseList" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <ng-container *ngIf="(responseList$ | async) as forecastList"> 
+      <li *ngFor="let item of forecastList" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <a style="cursor: pointer;" [routerLink]="item.name"><span>{{ item.name }}, {{ item.sys.country }} | Wind:
             {{item.wind.speed | number: '1.0-0'}} km / h | {{item.main.temp | number: '1.0-0'}} &#8451;</span></a>
       </li>
+    </ng-container>
     </div>
     <div class="col-md-9">
       <router-outlet></router-outlet>
