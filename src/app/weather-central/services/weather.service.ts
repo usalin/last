@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
-import { forkJoin } from 'rxjs/internal/observable/forkJoin';
+
 import { ForecastDataObject } from '../models/forecast.model';
 import { Cities } from '../models/city.model';
+import { forkJoin, Observable } from 'rxjs';
 
 @Injectable()
 export class WeatherService {

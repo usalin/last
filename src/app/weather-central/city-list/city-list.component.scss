@@ -1,4 +1,39 @@
 @import "abstracts/variables";
+
+ .container {
+  display: grid;
+  grid-template-rows: 40vh 40vh;
+  grid-template-columns: [sidebar-start] 40rem [sidebar-end center-start] repeat(4, [col-start] minmax(min-content, 10rem) [col-end]) [center-end];
+  border: 2px solid red;
+
+ > .list-container {
+   display: grid; 
+   background: linear-gradient(to right, #f3a7bd, pink);
+   grid-column: sidebar-chart sidebar-end;
+   grid-row: 1 / -1;
+ }
+   
+  > .detail-container {
+    display: grid;
+    background-color: cyan;
+    grid-column: center-start center-end;
+    grid-row: 1 / -1;
+    border: 5px solid green;
+
+   .card-container {
+      
+      background-color: cyan;
+      width: 8vw;
+      height: 20vh;
+      margin: 3px;
+      }
+  }
+  
+
+
+ }
+
+
 .active {
   border: 1px solid purple;
 }
@@ -14,9 +49,4 @@ li {
       color: greenyellow;
     }
   }
-}
-.list-container {
-  background: linear-gradient(to right, #f3a7bd, pink);
-  height: 41vh;
-  margin-top: 4.5vh;
 }
