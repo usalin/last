@@ -7,7 +7,6 @@ import { WeatherService } from '../services/weather.service';
   selector: 'app-city-list',
   templateUrl: './city-list.component.html',
   styleUrls: ['./city-list.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class CityListComponent implements OnInit {
 
