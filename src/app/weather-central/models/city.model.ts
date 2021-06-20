@@ -74,5 +74,11 @@ export const Cities = [
 ]
 export const CityNames = ["Izmir", "Amsterdam", "Milan", "Prague", "Stockholm"];
 
-
-
+export const cityDetailData = [
+{cod: "200" },
+{city: {id: 311044, name: "İzmir", coord: {lat: 38.4622, lon: 27.0923}, country: "TR", population: 3731863}},
+{cnt: 40},
+{cod: "200"},
+{list: [{dt: 1624190400}, {dt: 1624201200}, {dt: 1624212000}, {dt: 1624222800}, {dt: 1624233600}]},
+{message: 0}
+]
