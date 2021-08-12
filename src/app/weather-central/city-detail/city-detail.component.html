@@ -1,7 +1,7 @@
-<ng-container *ngIf="isLoading">
+<div *ngIf="isLoading">
    <mat-spinner></mat-spinner>
    <p>Loading Forecast..</p>
-</ng-container>
+</div>
 <h4>24-Hour Forecast For: <strong>{{cityName}}</strong></h4>
 <div class="card-holder" *ngIf="isReady && !isLoading">
    <div class="card-selector" *ngFor="let item of forecastDataList">

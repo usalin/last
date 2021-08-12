@@ -1,6 +1,5 @@
 @import "main";
-
-   .card-holder {
+.card-holder {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
    // grid-template-columns: repeat(4, minmax(10rem, 1fr));
@@ -9,12 +8,17 @@
    margin-left: 3rem;
    margin-right: 3rem;
 
-   @media only screen and (max-width: $bp-medium) {
-      grid-template-columns: 1fr;
-      background-color: orange;
-  }
+//    @media only screen and (max-width: $bp-medium) {
+//       grid-template-columns: 1fr;
+//       background-color: orange;
+//   }
   }
   .card-selector {
      display: grid;
 
+  }
+
+  img {
+     width: 50px;
+     height: 50px;
   }

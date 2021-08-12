@@ -10,10 +10,9 @@ import { WeatherService } from '../services/weather.service';
 })
 export class CityListComponent implements OnInit {
 
-  responseList$: Observable<WeatherDataObject[]>;
+  responseList$ = this.weatherService.requestDataFromMultipleSources();
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
-   this.responseList$ = this.weatherService.requestDataFromMultipleSources();
   }
 }
